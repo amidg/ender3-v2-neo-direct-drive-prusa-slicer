@@ -2,7 +2,7 @@
 
 ## Overview
 
-This repository contains customized **PrusaSlicer 2.9.0** profiles for the **Creality Ender 3 Pro** with a **Direct Drive** modification. The profiles are optimized for **PLA+** filament, with the **0.2mm Normal profile** being extensively tested.
+This repository contains customized **PrusaSlicer 2.9.0** profiles for the **Creality Ender 3 Pro** with a **Direct Drive** modification. The profiles are specifically optimized for **Sunlu PLA+** filament, with the **0.2mm Normal profile** being extensively tested.
 
 ## Hardware Setup
 
@@ -15,7 +15,7 @@ The printer is equipped with the following modifications:
 
 ## Included Configurations
 
-The provided profiles include various print resolutions and optimizations for PLA+ filament:
+The provided profiles include various print resolutions and are optimized for Sunlu PLA+ filament:
 
 | Profile               | Layer Height | Supported Nozzles | Tested |
 | --------------------- | ------------ | ----------------- | ------ |
@@ -33,7 +33,7 @@ The provided profiles include various print resolutions and optimizations for PL
 
 ## 0.20mm Normal Profile Optimization
 
-The following optimizations have been applied to the **0.2mm Normal profile**:
+The following optimizations have been applied to the **0.2mm Normal profile**, specifically for **Sunlu PLA+** filament:
 
 - **First Layer Settings:**
   - First Layer Height: 0.2 mm
@@ -41,10 +41,12 @@ The following optimizations have been applied to the **0.2mm Normal profile**:
   - First Layer Extrusion Width: 0.45 mm
   - First Layer Temperature: 205°C
   - First Layer Bed Temperature: 65°C
+
 - **Retraction Settings:**
   - Retraction Length: 1.3 mm
   - Retraction Speed: 44 mm/s
   - Retraction Lift Z: 0.2 mm
+
 - **Filament Flow & Extrusion Settings:**
   - Extrusion Multiplier: 1.00
   - Filament Diameter: 1.75 mm
