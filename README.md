@@ -2,63 +2,61 @@
 
 ## Overview
 
-This repository contains customized **PrusaSlicer 2.9.0** profiles for the **Creality Ender 3 Pro** with a **Direct Drive** modification. The profiles are specifically optimized for **Sunlu PLA+** filament, with the **0.2mm Normal profile** being extensively tested.
+This repository contains customized **PrusaSlicer 2.9.0** profiles for the **Creality Ender 3 Pro** with a **Direct Drive** modification. The profiles are specifically optimized for **Polymaker PolyTerra PLA+** filament, with the **0.2mm Normal profile** being extensively tested.
 
 ## Hardware Setup
 
 The printer is equipped with the following modifications:
 
 - **Printer:** Creality Ender 3 Pro
+- **Direct Drive:** Custom Direct Drive conversion
 - **Fan Mount:** [Thingiverse Link](https://www.thingiverse.com/thing:4369859)
-- **Direct Drive:** [Thingiverse Link](https://www.thingiverse.com/thing:4555065)
-- **BL-Touch Mount:** [Thingiverse Link](https://www.thingiverse.com/thing:4823903)
+- **BL-Touch Removed**: Manual bed leveling with paper method
 
 ## Included Configurations
 
-The provided profiles include various print resolutions and are optimized for Sunlu PLA+ filament:
+The provided profile is optimized for Polymaker PolyTerra PLA+ filament:
 
 | Profile               | Layer Height | Supported Nozzles | Tested |
 | --------------------- | ------------ | ----------------- | ------ |
-| 0.08 mm Superdetail   | 0.08 mm      | 0.4 mm            | ❌      |
-| 0.10 mm Highdetail    | 0.10 mm      | 0.4 mm            | ❌      |
-| 0.12 mm Detail        | 0.12 mm      | 0.4 mm            | ❌      |
-| 0.16 mm Optimal       | 0.16 mm      | 0.4 mm            | ❌      |
 | **0.20 mm Normal**    | 0.20 mm      | 0.4 mm            | ✅      |
-| 0.24 mm Draft         | 0.24 mm      | 0.4 mm            | ❌      |
-| 0.16 mm Optimal Speed | 0.16 mm      | 0.4 mm            | ❌      |
-| 0.20 mm Normal Speed  | 0.20 mm      | 0.4 mm            | ❌      |
-| 0.20 mm High Speed    | 0.20 mm      | 0.4 mm            | ❌      |
 
-> **Note:** Only the **0.2mm Normal profile** has been extensively tested. All other profiles are available but not yet fully validated.
+> **Note:** The **0.2mm Normal profile** has been extensively tested.
 
 ## 0.20mm Normal Profile Optimization
 
-The following optimizations have been applied to the **0.2mm Normal profile**, specifically for **Sunlu PLA+** filament:
+The following optimizations have been applied to the **0.2mm Normal profile**, specifically for **Polymaker PolyTerra PLA+** filament:
 
-- **First Layer Settings:**
-  - First Layer Height: 0.2 mm
-  - First Layer Speed: 15 mm/s
-  - First Layer Extrusion Width: 0.45 mm
-  - First Layer Temperature: 205°C
-  - First Layer Bed Temperature: 65°C
+### **First Layer Settings:**
+- First Layer Height: **0.24 mm**
+- First Layer Speed: **20 mm/s**
+- First Layer Extrusion Width: **0.44 mm**
+- First Layer Temperature: **200°C**
+- First Layer Bed Temperature: **65°C**
 
-- **Retraction Settings:**
-  - Retraction Length: 1.3 mm
-  - Retraction Speed: 44 mm/s
-  - Retraction Lift Z: 0.2 mm
+### **Retraction & Extrusion Settings:**
+- Retraction Length: **1.3 mm**
+- Retraction Speed: **50 mm/s**
+- Retraction Before Wipe: **20%** (Previously 0.6%)
+- Extrusion Multiplier: **1.01**
+- Filament Diameter: **1.75 mm**
+- Extrusion Width: **0.4 mm**
 
-- **Filament Flow & Extrusion Settings:**
-  - Extrusion Multiplier: 1.00
-  - Filament Diameter: 1.75 mm
-  - Extrusion Width: 0.4 mm
+### **Additional Optimizations:**
+- **Infill Density:** Increased from **15%** to **30%** for better structural integrity
+- **Top Solid Layers:** Increased from **5** to **6** for improved top layer finish
+- **Start GCode Optimization:**
+  - Düse heizt erst auf **150°C**, dann erst auf Drucktemperatur → **Verhindert Filamentausfluss vor Druckbeginn**
+  - **Erweiterte Reinigungslinien** für bessere Extrusionskontrolle
+- **Seam Position:** Set to `Nearest`
 
 ## Installation
 
 ### 1. Importing PrusaSlicer Profiles
 
 1. Open PrusaSlicer.
-2. Go to **Settings → Import Profiles** and select either `PrusaSlicer_config_bundle.ini` or `config.ini`.
-3. Enable the desired profile.
+2. Go to **Settings → Import Profiles** and select `PrusaSlicer_config_bundle.ini`.
+3. Enable the profile.
 
 ## License
 
@@ -67,3 +65,4 @@ These configuration files are provided under the **MIT License**, meaning you ar
 ## Feedback & Improvements
 
 If you have suggestions for improvements or find any issues, feel free to create an issue on GitHub or submit a pull request with your adjustments.
+
