@@ -76,6 +76,7 @@ The provided profiles are optimized for **Polymaker PolyTerra PLA+** filament an
 ✅ Use the **SMALL** profile for smaller parts where precision and detail are critical.  
 ✅ Both profiles are optimized to reduce **stringing** and **warping**, which were common issues in earlier configurations.  
 
+![Preview](Preview.JPEG)
 ---
 
 ## License
