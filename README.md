@@ -1,4 +1,5 @@
 # PrusaSlicer Configs for Creality Ender 3 Pro with Direct Drive
+> 🔎 Keywords: PrusaSlicer Profile, Creality Ender 3 Pro, Direct Drive, Polymaker PolyTerra PLA+, 3D Printing, Best Settings, Optimized Profiles
 
 ## Overview
 
