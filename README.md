@@ -13,6 +13,7 @@ The printer is equipped with the following modifications:
 - **Direct Drive:** Custom Direct Drive conversion
 - **Fan Mount:** [Thingiverse Link](https://www.thingiverse.com/thing:4369859)
 - **BL-Touch Removed**: Manual bed leveling using the paper method
+- **Filament:** PolyTerra (Polymarker) PLA-Plus
 
 ---
 
