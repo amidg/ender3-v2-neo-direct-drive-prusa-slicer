@@ -10,10 +10,12 @@ This repository contains customized **PrusaSlicer 2.9.0** profiles for the **Cre
 The printer is equipped with the following modifications:
 
 - **Printer:** Creality Ender 3 Pro
-- **Direct Drive:** Custom Direct Drive conversion
+- **Direct Drive:** [Ender 3 V2 Direct Drive](https://www.thingiverse.com/thing:4555065)
 - **Fan Mount:** [Thingiverse Link](https://www.thingiverse.com/thing:4369859)
-- **BL-Touch Removed**: Manual bed leveling using the paper method
+- **BLTouch (Antclabs) Removed**: Manual bed leveling using the paper method
 - **Filament:** PolyTerra (Polymarker) PLA-Plus
+
+> ⚠️ **Important:** While these profiles are optimized for **Polymaker PolyTerra PLA+**, they may also work well with other PLA+ filaments. However, adjustments to temperatures, retraction settings, or cooling might be necessary for best results.
 
 ---
 
@@ -61,7 +63,7 @@ The provided profiles are optimized for **Polymaker PolyTerra PLA+** filament an
 
 ---
 
-## Installation
+## 🚀 Quick Start
 
 ### 1. Importing PrusaSlicer Profiles
 1. Open **PrusaSlicer**.
@@ -69,6 +71,7 @@ The provided profiles are optimized for **Polymaker PolyTerra PLA+** filament an
 3. Select the desired profile depending on your print size:
    - **LARGE** for big, stable parts.
    - **SMALL** for smaller, detail-oriented prints.
+4. Use **200°C nozzle temperature** and **65°C bed temperature** for optimal results.
 
 ---
 
@@ -77,7 +80,7 @@ The provided profiles are optimized for **Polymaker PolyTerra PLA+** filament an
 ✅ Use the **SMALL** profile for smaller parts where precision and detail are critical.  
 ✅ Both profiles are optimized to reduce **stringing** and **warping**, which were common issues in earlier configurations.  
 
-![Preview](Preview.JPEG)
+![Preview | width=400](Preview.JPEG)
 ---
 
 ## License
