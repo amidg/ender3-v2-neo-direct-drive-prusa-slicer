@@ -1,100 +1,213 @@
-# PrusaSlicer Configs for Creality Ender 3 Pro with Direct Drive
-> 🔎 Keywords: PrusaSlicer Profile, Creality Ender 3 Pro, Direct Drive, Polymaker PolyTerra PLA+, 3D Printing, Best Settings, Optimized Profiles
+# PrusaSlicer Configs for Creality Ender 3 V2 Neo with Direct Drive
+
+> 🔎 Keywords: PrusaSlicer Profile, Creality Ender 3 V2 Neo, Direct Drive, Creality PLA, 3D Printing, Misfeed Prevention, Optimized Profiles
 
 ## Overview
 
-This repository contains customized **PrusaSlicer 2.9.1** profiles for the **Creality Ender 3 Pro** with a **Direct Drive** modification. The profiles are specifically optimized for **Polymaker PolyTerra PLA+** filament, with separate configurations for **small** and **large** prints to ensure optimal results for various model sizes.
+This repository contains **customized PrusaSlicer 2.9.1** profiles specifically designed for the **Creality Ender 3 V2 Neo** with **Direct Drive** modification. These profiles are optimized for **Creality's own PLA filament** with a primary focus on **minimizing misfeeds** and ensuring reliable, consistent printing performance.
+
+**🔗 Based on the excellent work from:** [s3vdev/PrusaSlicer-Profiles-Ender3Pro-DirectDrive](https://github.com/s3vdev/PrusaSlicer-Profiles-Ender3Pro-DirectDrive)
+
+## Key Differences from Original Project
+
+While this project is inspired by the original Ender 3 Pro profiles, it has been **completely rewritten** for the Ender 3 V2 Neo with significant optimizations:
+
+### **Hardware Differences:**
+- **Printer:** Ender 3 V2 Neo (220x220x250mm build volume)
+- **Direct Drive:** Default stepper motor with default gears
+- **Nozzle:** 0.4mm standard nozzle
+- **Filament:** Creality PLA (vs. original Polymaker PolyTerra PLA+)
+
+### **Primary Focus - Misfeed Prevention:**
+- **Ultra-conservative retraction settings** (0.8mm @ 35mm/s)
+- **Reduced accelerations** for smoother filament flow
+- **Pressure stabilization pauses** in start G-code
+- **Multi-stage heating sequences** to prevent oozing
+- **Gentle prime sequences** with small test extrusions
+
+---
 
 ## Hardware Setup
 
-The printer is equipped with the following modifications:
+The printer configuration these profiles are designed for:
 
-- **Printer:** Creality Ender 3 Pro
-- **Direct Drive:** [Ender 3 V2 Direct Drive](https://www.thingiverse.com/thing:4555065)
-- **Fan Mount:** [Thingiverse Link](https://www.thingiverse.com/thing:4369859)
-- **BLTouch (Antclabs) Removed**: Manual bed leveling using the paper method
-- **Filament:** **Polymaker PolyTerra PLA+**
+* **Printer:** Creality Ender 3 V2 Neo
+* **Build Volume:** 220 x 220 x 250 mm
+* **Direct Drive:** Stock Ender 3 V2 Neo direct drive system
+* **Stepper Motor:** Default Creality stepper
+* **Gears:** Default gear ratio
+* **Nozzle:** 0.4mm standard nozzle
+* **Filament:** **Creality PLA** (optimized for Creality's own filament)
 
-> ⚠️ **Important:** While these profiles are optimized for **Polymaker PolyTerra PLA+**, they may also work well with other PLA+ filaments. However, adjustments to temperatures, retraction settings, or cooling might be necessary for best results.
+> ⚠️ **Important:** These profiles are specifically tuned for **Creality PLA filament** and **direct drive systems**. While they may work with other PLA brands, optimal results are achieved with Creality's filament.
 
 ---
 
 ## Included Configurations
 
-The provided profiles are optimized for **Polymaker PolyTerra PLA+** filament and differentiated for small and large prints:
+### Print Profiles (Anti-Misfeed Optimized)
 
-| Profile                     | Layer Height | Infill Density | Optimized For | Tested |
-|-----------------------------|---------------|-----------------|----------------|---------|
-| **0.20 mm Normal (LARGE)**   | 0.20 mm       | 30%             | Large, stable models | ✅ |
-| **0.20 mm Normal (SMALL)**   | 0.20 mm       | 15%             | Small, detail-focused models | ✅ |
-| **0.16 mm Normal (LARGE)**   | 0.16 mm       | 20%             | High-detail large models | ✅ |
+| Profile Name                    | Layer Height | Speed Focus | Optimized For                    | Support Coverage |
+| ------------------------------- | ------------ | ----------- | -------------------------------- | ---------------- |
+| **Ender3V2Neo QUALITY 0.15mm** | 0.15 mm      | Slow        | High-detail prints, small parts  | Ultra-dense      |
+| **Ender3V2Neo NORMAL 0.20mm**  | 0.20 mm      | Balanced    | General purpose printing         | Dense            |
+| **Ender3V2Neo DRAFT 0.28mm**   | 0.28 mm      | Fast        | Rapid prototyping, large parts   | Standard         |
 
-> **Note:** All profiles have been tested extensively for quality and reliability.
+### Filament Profile
+- **Creality PLA Ender3V2Neo DirectDrive**: Optimized specifically for Creality PLA with conservative extrusion settings
 
----
-
-## Optimizations & Key Features
-
-### **First Layer Settings (All Profiles):**
-- First Layer Height: **0.24 mm** (LARGE) / **0.20 mm** (SMALL) / **0.24 mm** (0.16 mm LARGE)
-- First Layer Speed: **20 mm/s**
-- First Layer Extrusion Width: **0.48 mm** (LARGE) / **0.45 mm** (SMALL) / **0.48 mm** (0.16 mm LARGE)
-- First Layer Temperature: **200°C**
-- First Layer Bed Temperature: **65°C**
-
-### **Retraction & Extrusion Settings:**
-- Retraction Length: **1.3 mm** (LARGE) / **1.0 mm** (SMALL) / **1.2 mm** (0.16 mm LARGE)
-- Retraction Speed: **50 mm/s**
-- Retraction Before Wipe: **20%** (LARGE) / **0.6%** (SMALL) / **15%** (0.16 mm LARGE)
-- Extrusion Multiplier: **1.01**
-- Filament Diameter: **1.75 mm**
-- Extrusion Width: **0.4 mm**
-
-### **Additional Optimizations:**
-- **Infill Density:**  
-  - **30%** for LARGE profile to improve structural stability  
-  - **15%** for SMALL profile to reduce material usage and printing time  
-  - **20%** for 0.16 mm LARGE profile for improved structural detail
-- **Top Solid Layers:**  
-  - **6** for LARGE prints to ensure strong, smooth top layers  
-  - **5** for SMALL prints to optimize print speed
-- **Start GCode Optimization:**  
-  - Düse heizt erst auf **150°C**, dann auf Drucktemperatur → **Verhindert Filamentausfluss vor Druckbeginn**
-  - **Erweiterte Reinigungslinien** für verbesserte Extrusionskontrolle
-- **Seam Position:** Set to `Nearest` for reduced visible seams.
+### Printer Profile
+- **Creality Ender3V2Neo DirectDrive 0.4mm**: Complete printer definition with anti-misfeed G-code sequences
 
 ---
 
-## 🚀 Quick Start
+## Anti-Misfeed Optimizations
 
-### 1. Importing PrusaSlicer Profiles
-1. Open **PrusaSlicer**.
-2. Go to **Settings → Import Profiles** and select `PrusaSlicer_config_bundle-combi.ini`.
-3. Select the desired profile depending on your print size:
-   - **LARGE** for big, stable parts.
-   - **SMALL** for smaller, detail-oriented prints.
-   - **0.16 mm LARGE** for higher detail on large parts.
-4. Use **200°C nozzle temperature** and **65°C bed temperature** for optimal results.
+### **Retraction Settings (Critical for Direct Drive):**
+- **Retraction Length:** 0.8mm (significantly reduced from Bowden systems)
+- **Retraction Speed:** 35mm/s (conservative to prevent jamming)
+- **Z-Lift:** 0.1mm (minimal to prevent excessive movement)
+- **Only retract when crossing perimeters:** Enabled
+
+### **Temperature Management:**
+- **Printing Temperature:** 205°C (conservative for reliable flow)
+- **First Layer Temperature:** 210°C (higher for better adhesion)
+- **Bed Temperature:** 60°C (65°C first layer)
+- **Idle Temperature:** 160°C (prevents oozing during pauses)
+
+### **Speed & Acceleration (Smooth Filament Flow):**
+- **First Layer Speed:** 15-20mm/s (extra slow for reliability)
+- **External Perimeter Speed:** 20-30mm/s (conservative)
+- **Default Acceleration:** 300-500mm/s² (reduced from typical 1000+)
+- **Travel Speed:** 150mm/s (moderate to reduce vibration)
+
+### **Enhanced G-Code Sequences:**
+- **Multi-stage heating:** Prevents filament oozing during startup
+- **Pressure stabilization pauses:** Allows filament pressure to equalize
+- **Conservative prime lines:** Gentle extrusion testing before print
+- **Gentle retracts:** Small test retracts to ensure proper feeding
 
 ---
 
-## Tips for Best Results
-✅ Use the **LARGE** profile for big models to ensure better stability and layer adhesion.  
-✅ Use the **SMALL** profile for smaller parts where precision and detail are critical.  
-✅ Use the **0.16 mm LARGE** profile for complex models requiring higher detail.  
-✅ All profiles are optimized to reduce **stringing** and **warping**, which were common issues in earlier configurations.  
+## Support Material Enhancements
 
-![Preview | width=400](Preview.JPEG)
+### **Maximum Coverage Support System:**
+- **Automatic Support Generation:** Always enabled
+- **Support Spacing:** 0.2mm (ultra-dense for complete coverage)
+- **Pattern:** Rectilinear (most reliable)
+- **Contact Distance:** 0.3mm (easy removal with good support)
+- **XY Spacing:** 40% (adequate clearance from part walls)
+- **Threshold:** 35° (aggressive overhang detection)
+- **Support from anywhere:** Not limited to buildplate only
+
+### **Fan Settings for Optimal Cooling:**
+- **Fan Speed:** 100% throughout entire print
+- **Fan Activation:** Layer 2 (immediate cooling)
+- **Bridge Fan Speed:** 100% (maximum cooling for overhangs)
+
+---
+
+## 🚀 Quick Start Guide
+
+### 1. Import the Configuration Bundle
+
+1. Download `PrusaSlicer_config_bundle_ender3v2neo_creality_pla.ini`
+2. Open **PrusaSlicer 2.9.1** or newer
+3. Go to **File → Import → Import Config Bundle**
+4. Select the downloaded `.ini` file
+5. All profiles will be imported automatically
+
+### 2. Select Your Profile
+
+Choose based on your printing needs:
+- **QUALITY (0.15mm):** For detailed miniatures, small mechanical parts
+- **NORMAL (0.20mm):** For most general printing tasks *(recommended starting point)*
+- **DRAFT (0.28mm):** For quick prototypes and large structural parts
+
+### 3. Load Your Model and Print
+
+1. Import your STL/3MF file
+2. Supports will generate automatically for any overhangs >35°
+3. Slice and print with confidence - the profiles handle misfeed prevention automatically
+
+---
+
+## Expected Print Quality & Performance
+
+### **Reliability Improvements:**
+✅ **Drastically reduced misfeeds** - Conservative settings prevent jamming  
+✅ **Consistent extrusion** - Pressure management prevents flow variations  
+✅ **Automatic support coverage** - No manual support adjustment needed  
+✅ **Clean overhangs** - 100% fan cooling provides excellent overhang quality  
+
+### **Print Quality:**
+✅ **Smooth surface finish** - Conservative speeds reduce vibration artifacts  
+✅ **Strong layer adhesion** - Optimized temperatures for Creality PLA  
+✅ **Reliable first layers** - Slow, controlled first layer deposition  
+✅ **Easy support removal** - 0.3mm contact distance balances support and removal  
+
+### **Performance Characteristics:**
+- **Print Speed:** Moderate (prioritizes reliability over speed)
+- **Material Usage:** Slightly higher (dense supports for reliability)
+- **Success Rate:** Very high (conservative settings prevent failures)
+- **Maintenance:** Low (reduced wear from gentle operation)
+
+---
+
+## Troubleshooting & Fine-Tuning
+
+### **If you still experience misfeeds:**
+- Reduce retraction length to 0.6mm
+- Increase printing temperature by 5°C
+- Check filament path for obstructions
+
+### **If you see stringing:**
+- Increase retraction length to 1.0mm (but keep speed at 35mm/s)
+- Ensure 100% fan speed is active
+- Check nozzle temperature isn't too high
+
+### **For different PLA brands:**
+- Adjust temperature ±10°C based on manufacturer recommendations
+- Fine-tune extrusion multiplier (start with 0.95-1.02 range)
+- Test retraction settings on small calibration prints
+
+---
+
+## Comparison with Original Project
+
+| Aspect                  | Original (Ender 3 Pro)        | This Project (Ender 3 V2 Neo)     |
+| ----------------------- | ----------------------------- | ---------------------------------- |
+| **Primary Focus**       | Print quality optimization    | **Misfeed prevention**            |
+| **Filament**           | Polymaker PolyTerra PLA+      | **Creality PLA**                  |
+| **Retraction**         | Standard direct drive         | **Ultra-conservative (0.8mm)**    |
+| **Supports**           | Manual configuration          | **Automatic, ultra-dense**        |
+| **Cooling**            | Variable fan speed            | **100% fan always**               |
+| **Print Speed**        | Balanced                      | **Conservative for reliability**   |
+| **Target Users**       | General 3D printing           | **Users experiencing misfeeds**   |
+
+---
+
+## Contributing & Feedback
+
+These profiles were developed through extensive testing specifically for the Ender 3 V2 Neo with direct drive. If you have suggestions for improvements or encounter issues:
+
+1. **Create an issue** describing your problem and printer setup
+2. **Submit a pull request** with tested improvements
+3. **Share your results** to help improve the profiles for everyone
+
 ---
 
 ## License
 
-These configuration files are provided under the **MIT License**, meaning you are free to use, modify, and share them.
+This project is provided under the **MIT License** - feel free to use, modify, and share these configurations.
 
 ---
 
-## Feedback & Improvements
+## Acknowledgments
 
-If you have suggestions for improvements or find any issues, feel free to create an **issue** on GitHub or submit a **pull request** with your adjustments.
+**Special thanks to [s3vdev](https://github.com/s3vdev)** for the original [PrusaSlicer-Profiles-Ender3Pro-DirectDrive](https://github.com/s3vdev/PrusaSlicer-Profiles-Ender3Pro-DirectDrive) project that served as the foundation and inspiration for this work. While this project has been completely rewritten for different hardware and objectives, the original project provided valuable insights into direct drive optimization.
 
-Enjoy smooth and reliable prints! 🚀
+---
+
+**Happy printing with your Ender 3 V2 Neo! 🚀**  
+*No more misfeeds, just reliable prints.*
