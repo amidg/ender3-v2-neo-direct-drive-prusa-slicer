@@ -16,6 +16,7 @@ While this project is inspired by the original Ender 3 Pro profiles, it has been
 - **Printer:** Ender 3 V2 Neo (220x220x250mm build volume)
 - **Direct Drive:** Default stepper motor with default gears
 - **Nozzle:** 0.4mm standard nozzle
+- **Bed Leveling:** Manual leveling with 0.203mm feeler gauge
 - **Filament:** Creality PLA (vs. original Polymaker PolyTerra PLA+)
 
 ### **Primary Focus - Misfeed Prevention:**
@@ -37,6 +38,7 @@ The printer configuration these profiles are designed for:
 * **Stepper Motor:** Default Creality stepper
 * **Gears:** Default gear ratio
 * **Nozzle:** 0.4mm standard nozzle
+* **Bed Leveling:** Manual leveling using 0.203mm feeler gauge
 * **Filament:** **Creality PLA** (optimized for Creality's own filament)
 
 > ⚠️ **Important:** These profiles are specifically tuned for **Creality PLA filament** and **direct drive systems**. While they may work with other PLA brands, optimal results are achieved with Creality's filament.
@@ -74,6 +76,12 @@ The printer configuration these profiles are designed for:
 - **First Layer Temperature:** 210°C (higher for better adhesion)
 - **Bed Temperature:** 60°C (65°C first layer)
 - **Idle Temperature:** 160°C (prevents oozing during pauses)
+
+### **Bed Leveling & First Layer:**
+- **Manual Bed Leveling:** Calibrated with 0.203mm feeler gauge
+- **First Layer Height:** 0.203mm (matches feeler gauge for perfect adhesion)
+- **Consistent Across Profiles:** All quality settings use same first layer height
+- **Perfect Bed Contact:** No floating first layers or poor adhesion
 
 ### **Speed & Acceleration (Smooth Filament Flow):**
 - **First Layer Speed:** 15-20mm/s (extra slow for reliability)
@@ -170,6 +178,12 @@ Choose based on your printing needs:
 - Adjust temperature ±10°C based on manufacturer recommendations
 - Fine-tune extrusion multiplier (start with 0.95-1.02 range)
 - Test retraction settings on small calibration prints
+
+### **Bed Leveling Calibration:**
+- **Use 0.203mm feeler gauge** for consistent bed leveling
+- **All profiles use 0.203mm first layer height** - no profile-specific adjustments needed
+- **If using different gauge thickness:** Update `first_layer_height` values in all three print profiles
+- **Perfect adhesion indicator:** First layer should stick without gaps or over-squishing
 
 ---
 
